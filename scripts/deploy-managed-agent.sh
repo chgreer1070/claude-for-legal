@@ -77,7 +77,7 @@ upload_skill() {
     printf '%s' "$cached"; return
   fi
   local resp id zip
-  zip="$(mktemp -t skill.XXXXXX).zip"
+  zip="$(mktemp -t skill.XXXXXX)"; rm -f "$zip"; zip="${zip}.zip"
   (cd "$(dirname "$path")" && zip -qr "$zip" "$(basename "$path")")
   # /v1/skills uses its own beta header and multipart, not the managed-agents JSON path
   resp=$(curl -sS "$API/v1/skills" \
