@@ -1,0 +1,9 @@
+{
+  "name": "harvey-ai",
+  "version": "0.1.0",
+  "description": "Harvey AI brings legal Q&A, Vault document analysis, and specialized research knowledge sources into Claude for Harvey subscribers.",
+  "author": {
+    "name": "Harvey AI",
+    "email": "support@harvey.ai"
+  }
+}
