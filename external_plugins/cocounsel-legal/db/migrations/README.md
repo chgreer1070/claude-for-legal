@@ -23,6 +23,8 @@ table tracks which versions have been applied.
 | 001 | `initial_schema` | Core tables: jurisdictions, legal_documents, citations, research_sessions, research_reports, practical_law_sources, current_awareness, administrative_materials |
 | 002 | `core_indexes` | Performance indexes for the four Deep Research MCP tool access patterns |
 | 003 | `query_analytics` | Query logging, jurisdiction usage tracking, citation verification logs, research topic clustering, daily summary materialized view |
+| 004 | `seed_jurisdictions` | Populates jurisdictions table: 50 states, DC, 5 territories, 15 federal courts (circuits + SCOTUS) |
+| 005 | `rate_limiting` | Subscription quotas, usage counters, active session tracking, rate limit event logging |
 
 ## Adding a new migration
 

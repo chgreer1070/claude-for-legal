@@ -7,15 +7,64 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 - Return to a completed CoCounsel Legal research conversation and retrieve the report later.
 - Ask follow-up questions in the same conversation without restarting research.
 
+## Setup
+
+Run `/cocounsel-legal:cold-start-interview` on first use. It configures your research defaults (jurisdictions, citation format, subscription tier) so every skill reads your preferences automatically. Takes ~5 minutes. See `CLAUDE.md` for the full research profile template.
+
 ## Skills
 
 | Skill | Command | What it does |
 |---|---|---|
+| **Cold-Start Interview** | `/cocounsel-legal:cold-start-interview` | Setup interview — configures research defaults, jurisdiction preferences, subscription tier, citation format, and cross-plugin routing. |
 | **Deep Research** | `/cocounsel-legal:deep-research` | Runs the full Westlaw Deep Research cycle: start, poll, report. Returns a fully cited research report. |
 | **Citation Verification** | `/cocounsel-legal:citation-verification` | Validates citations from a Deep Research report or user-supplied text. Checks good-law status, negative treatment, and resolution accuracy. |
 | **Jurisdiction Comparison** | `/cocounsel-legal:jurisdiction-comparison` | Side-by-side comparison of how 2–3 U.S. jurisdictions treat the same legal issue. Produces a structured comparison table with citations. |
 | **Research Export** | `/cocounsel-legal:research-export` | Transforms a completed research report into a work-product format: research memo, brief section, client email, or executive summary. |
 | **Research History** | `/cocounsel-legal:research-history` | Retrieves and manages past Deep Research sessions. Find a previous report by topic, re-retrieve completed research, or list recent activity. |
+| **Research Brief** | `/cocounsel-legal:research-brief` | Takes a Deep Research report + case theory and drafts a structured legal argument section with authority marshaling and counter-argument anticipation. |
+| **Research Planner** | `/cocounsel-legal:research-planner` | Helps frame a legal question before running Deep Research. Identifies jurisdictions, narrows the issue, suggests query phrasing, estimates quota cost. |
+| **Quota Tracker** | `/cocounsel-legal:quota-tracker` | Tracks API usage against subscription limits. Shows remaining daily/monthly quota, concurrent sessions, and usage projections. |
+| **Case Law Monitor** | `/cocounsel-legal:case-law-monitor` | Sets up proactive monitoring of a legal topic for new case law developments. Produces periodic digests comparing new decisions against a baseline landscape. |
+
+### Planned capabilities (stubs)
+
+These skills are defined and ready for activation when the CoCounsel Legal MCP server exposes the corresponding endpoints:
+
+| Skill | Command | Status |
+|---|---|---|
+| **Practical Law Search** | `/cocounsel-legal:practical-law-search` | Stub — awaiting MCP endpoint |
+| **Document Drafting** | `/cocounsel-legal:document-drafting` | Stub — awaiting MCP endpoint |
+| **Contract Analysis** | `/cocounsel-legal:contract-analysis` | Stub — awaiting MCP endpoint |
+
+## Agents
+
+### Inline agents
+
+| Agent | Location | What it does |
+|---|---|---|
+| **Research Monitor** | `agents/research-monitor.md` | Scheduled agent that runs periodic Deep Research checks on monitored topics, compares against baselines, and produces digests of new case law developments. |
+
+### Managed agent cookbooks
+
+| Agent | Location | What it does |
+|---|---|---|
+| **Authority Tracker** | `managed-agent-cookbooks/authority-tracker/` | Scheduled agent that monitors cited authorities for negative treatment changes (like KeyCite alerts) and posts Slack alerts when a relied-on case is distinguished, overruled, or otherwise weakened. |
+| **Research Digest** | `managed-agent-cookbooks/research-digest/` | Weekly summary of all Deep Research activity across the team — groups by practice area, tracks jurisdiction patterns, projects quota usage. |
+| **Citation Health** | `managed-agent-cookbooks/citation-health/` | Periodic sweep of all citations from recent research outputs, checking treatment status and producing aggregate health statistics with degradation trend analysis. |
+
+## Cross-plugin integrations
+
+CoCounsel Legal is registered as an MCP connector in these practice-area plugins:
+
+| Plugin | Use case |
+|---|---|
+| `litigation-legal` | Case research, claim charts, motion prep, authority verification |
+| `commercial-legal` | Contract clause enforceability, governing law research |
+| `regulatory-legal` | Regulatory interpretation, enforcement action research |
+| `ip-legal` | Patent/trademark case law, IP litigation research |
+| `employment-legal` | Employment law research, wage/hour, classification |
+| `corporate-legal` | M&A diligence research, governance questions |
+| `privacy-legal` | Privacy regulation research, enforcement actions |
 
 ## Example use cases
 
@@ -26,6 +75,13 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 5. Compare California, Texas, and New York on trade secret misappropriation standards.
 6. Turn that research into a memo for the partner.
 7. Export an executive summary of the antitrust research for the business team.
+8. Draft the summary judgment argument section from that research — my theory is that the non-compete is overbroad.
+9. Check my API usage — how many research queries do I have left this month?
+10. Find me a Practical Law template for a SaaS agreement. *(planned)*
+11. Monitor non-compete enforceability in California for new case law — alert me when there's a new ruling.
+12. Set up my research profile — I mostly work in California and Federal 9th Circuit.
+13. Help me frame this research question — I know it's about non-competes but I'm not sure how to narrow it.
+14. Run the monthly citation health sweep — are any of my relied-on cases in trouble?
 
 ## When to Use
 
@@ -45,7 +101,7 @@ Any questions answerable from caselaw, statutes, regulations, administrative mat
 - Outcome predictions ("How likely is plaintiff to prevail on summary judgment?")
 - Identifying causes of action a client could bring (the skill researches what the law says, not whether a given set of facts states a claim)
 - Applying law to a specific fact pattern or scenario (the skill researches legal questions in the abstract, not how the law would resolve your facts)
-- Drafting legal documents, forms, or templates
+- Drafting legal documents, forms, or templates *(planned — see document-drafting stub)*
 - Information about specific judges, attorneys, or parties
 - Foreign or non-U.S. law
 - Commands to execute tasks ("Send me an email about X case")
@@ -56,6 +112,16 @@ Any questions answerable from caselaw, statutes, regulations, administrative mat
 ## Database
 
 The `db/` directory contains a reference PostgreSQL schema and indexes optimized for the plugin's data access patterns, plus a versioned migration system under `db/migrations/`. See [db/README.md](db/README.md) and [db/migrations/README.md](db/migrations/README.md).
+
+## References
+
+The `references/` directory contains guides and templates used by skills:
+
+| Reference | Purpose |
+|---|---|
+| `deep-research-query-guide.md` | How to frame queries for the best Deep Research results |
+| `citation-format-guide.md` | Supported citation formats (Bluebook, ALWD, house style) and source attribution tags |
+| `currency-watch.md` | Areas of active legal change where model knowledge is likely stale |
 
 ### Links
 

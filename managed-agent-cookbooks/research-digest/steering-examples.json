@@ -1,0 +1,17 @@
+[
+  {
+    "description": "Scheduled weekly digest — default Monday morning run",
+    "input": "Run the weekly research digest for the period ending today.",
+    "expected_behavior": "Scanner reads research_sessions and usage_counters for the last 7 days. Writer produces a digest grouped by practice area with quota projections. Posts to the configured Slack channel."
+  },
+  {
+    "description": "Monthly summary with quota analysis",
+    "input": "Produce a monthly research digest with detailed quota analysis. We're concerned about hitting our limit.",
+    "expected_behavior": "Scanner covers the full month. Writer emphasizes quota trends: daily usage pattern, peak days, projected overage date. Recommends batching or prioritization if quota is trending high."
+  },
+  {
+    "description": "Practice-area-specific digest",
+    "input": "Show me all employment law research from the last two weeks.",
+    "expected_behavior": "Scanner filters sessions by practice_area = 'employment'. Writer produces a focused digest showing employment-specific topics, jurisdictions, and whether follow-ups were run."
+  }
+]
