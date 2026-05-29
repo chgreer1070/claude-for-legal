@@ -46,6 +46,29 @@ only needed for citation links.
   LEGAL ADVICE. Attorney review required before reliance."
 - All citations from the original report are preserved — never drop a cite
 - Mark the export as "Draft" until the attorney approves
+- Use the citation format from the research profile
+  (`~/.claude/plugins/config/claude-for-legal/cocounsel-legal/CLAUDE.md` →
+  Citation format). Defaults to Bluebook if not configured.
+
+## Record Fidelity
+
+This skill transforms research reports — it does not generate new
+citations. Every citation in the exported document must trace back to
+the source Deep Research report.
+
+**Rules:**
+- Never add citations that were not in the original report. If a
+  proposition in the export needs a citation the report didn't provide,
+  insert `[CITE NEEDED — not in source report]` rather than inventing one.
+- Never remove citations from the original report during transformation.
+  If a format (e.g., client email) doesn't suit inline legal citations,
+  move them to footnotes or an appendix — don't drop them.
+- Tag any editorial additions (e.g., headings, transitions, plain-language
+  glosses) as `[editorial]` so the reviewer can distinguish report content
+  from export-layer additions.
+- When converting citations to a different format (Bluebook → ALWD, or
+  applying house style), preserve the original citation in a footnote if
+  the conversion is uncertain: `[original: 123 F.3d 456]`.
 
 ## Export Formats
 

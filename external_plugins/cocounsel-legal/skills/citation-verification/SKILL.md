@@ -45,6 +45,25 @@ user and stop.
 - When a citation has negative treatment, clearly state what happened and
   when, without alarming language — the attorney decides significance
 
+## Record Fidelity
+
+Every citation status reported by this skill must come from a Westlaw
+query via the CoCounsel Legal MCP server. Never report a citation's
+treatment status from model knowledge — model knowledge cannot reflect
+real-time KeyCite or Shepard's status.
+
+**Source attribution.** Tag every verification result:
+- `[Westlaw verified]` — status confirmed via MCP query
+- `[unresolved — verify manually]` — query returned no result or an
+  ambiguous match; do not guess the status
+
+**When a citation cannot be resolved.** If the MCP server returns no
+match or an ambiguous result:
+1. Report the citation as `unresolved` — do NOT infer status
+2. Suggest the user check manually on Westlaw
+3. Never downgrade a citation from "negative" to "good law" based on
+   model knowledge — a stale override is worse than a false alarm
+
 ## Verification Workflow
 
 ### 1. Gather citations

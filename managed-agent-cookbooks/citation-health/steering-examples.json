@@ -1,0 +1,17 @@
+[
+  {
+    "description": "Scheduled monthly citation sweep — all recent outputs",
+    "input": "Run the monthly citation health check across all research outputs from the last 30 days.",
+    "expected_behavior": "Collector gathers all citations from research reports, briefs, and exports. Checks each via CoCounsel Legal MCP. Reporter produces aggregate stats and flags any negative-treatment citations with treating authority and date. Posts to Slack."
+  },
+  {
+    "description": "Pre-filing citation check — specific matter",
+    "input": "We're filing a summary judgment brief next week. Sweep all citations from the research-brief output for matter MSJ-2026-042.",
+    "expected_behavior": "Collector filters to the specific matter's citations. Checks each one. Reporter produces a focused report emphasizing any citations that have degraded since the brief was drafted. Flags require immediate attorney review before filing."
+  },
+  {
+    "description": "Quota-constrained sweep — prioritize briefs",
+    "input": "Run a citation health check but we're low on quota. Focus on citations used in briefs and motions only.",
+    "expected_behavior": "Collector notes scope_reduced=true. Checks only citations with source_type='brief'. Reporter notes the scope limitation and recommends a full sweep when quota resets."
+  }
+]

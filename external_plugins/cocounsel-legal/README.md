@@ -22,6 +22,7 @@ Run `/cocounsel-legal:cold-start-interview` on first use. It configures your res
 | **Research Export** | `/cocounsel-legal:research-export` | Transforms a completed research report into a work-product format: research memo, brief section, client email, or executive summary. |
 | **Research History** | `/cocounsel-legal:research-history` | Retrieves and manages past Deep Research sessions. Find a previous report by topic, re-retrieve completed research, or list recent activity. |
 | **Research Brief** | `/cocounsel-legal:research-brief` | Takes a Deep Research report + case theory and drafts a structured legal argument section with authority marshaling and counter-argument anticipation. |
+| **Research Planner** | `/cocounsel-legal:research-planner` | Helps frame a legal question before running Deep Research. Identifies jurisdictions, narrows the issue, suggests query phrasing, estimates quota cost. |
 | **Quota Tracker** | `/cocounsel-legal:quota-tracker` | Tracks API usage against subscription limits. Shows remaining daily/monthly quota, concurrent sessions, and usage projections. |
 | **Case Law Monitor** | `/cocounsel-legal:case-law-monitor` | Sets up proactive monitoring of a legal topic for new case law developments. Produces periodic digests comparing new decisions against a baseline landscape. |
 
@@ -48,6 +49,8 @@ These skills are defined and ready for activation when the CoCounsel Legal MCP s
 | Agent | Location | What it does |
 |---|---|---|
 | **Authority Tracker** | `managed-agent-cookbooks/authority-tracker/` | Scheduled agent that monitors cited authorities for negative treatment changes (like KeyCite alerts) and posts Slack alerts when a relied-on case is distinguished, overruled, or otherwise weakened. |
+| **Research Digest** | `managed-agent-cookbooks/research-digest/` | Weekly summary of all Deep Research activity across the team — groups by practice area, tracks jurisdiction patterns, projects quota usage. |
+| **Citation Health** | `managed-agent-cookbooks/citation-health/` | Periodic sweep of all citations from recent research outputs, checking treatment status and producing aggregate health statistics with degradation trend analysis. |
 
 ## Cross-plugin integrations
 
@@ -77,6 +80,8 @@ CoCounsel Legal is registered as an MCP connector in these practice-area plugins
 10. Find me a Practical Law template for a SaaS agreement. *(planned)*
 11. Monitor non-compete enforceability in California for new case law — alert me when there's a new ruling.
 12. Set up my research profile — I mostly work in California and Federal 9th Circuit.
+13. Help me frame this research question — I know it's about non-competes but I'm not sure how to narrow it.
+14. Run the monthly citation health sweep — are any of my relied-on cases in trouble?
 
 ## When to Use
 
@@ -107,6 +112,16 @@ Any questions answerable from caselaw, statutes, regulations, administrative mat
 ## Database
 
 The `db/` directory contains a reference PostgreSQL schema and indexes optimized for the plugin's data access patterns, plus a versioned migration system under `db/migrations/`. See [db/README.md](db/README.md) and [db/migrations/README.md](db/migrations/README.md).
+
+## References
+
+The `references/` directory contains guides and templates used by skills:
+
+| Reference | Purpose |
+|---|---|
+| `deep-research-query-guide.md` | How to frame queries for the best Deep Research results |
+| `citation-format-guide.md` | Supported citation formats (Bluebook, ALWD, house style) and source attribution tags |
+| `currency-watch.md` | Areas of active legal change where model knowledge is likely stale |
 
 ### Links
 
