@@ -7,11 +7,25 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 - Return to a completed CoCounsel Legal research conversation and retrieve the report later.
 - Ask follow-up questions in the same conversation without restarting research.
 
+## Skills
+
+| Skill | Command | What it does |
+|---|---|---|
+| **Deep Research** | `/cocounsel-legal:deep-research` | Runs the full Westlaw Deep Research cycle: start, poll, report. Returns a fully cited research report. |
+| **Citation Verification** | `/cocounsel-legal:citation-verification` | Validates citations from a Deep Research report or user-supplied text. Checks good-law status, negative treatment, and resolution accuracy. |
+| **Jurisdiction Comparison** | `/cocounsel-legal:jurisdiction-comparison` | Side-by-side comparison of how 2–3 U.S. jurisdictions treat the same legal issue. Produces a structured comparison table with citations. |
+| **Research Export** | `/cocounsel-legal:research-export` | Transforms a completed research report into a work-product format: research memo, brief section, client email, or executive summary. |
+| **Research History** | `/cocounsel-legal:research-history` | Retrieves and manages past Deep Research sessions. Find a previous report by topic, re-retrieve completed research, or list recent activity. |
+
 ## Example use cases
 
-1. Research how California courts have treated non-compete agreements for executive employees since 2020. 
+1. Research how California courts have treated non-compete agreements for executive employees since 2020.
 2. I asked you to research California non-competes earlier. Can you now retrieve the full report?
 3. Follow up on that research: how does Texas law differ on executive non-competes for the same period?
+4. Verify all citations in that report before I include them in the brief.
+5. Compare California, Texas, and New York on trade secret misappropriation standards.
+6. Turn that research into a memo for the partner.
+7. Export an executive summary of the antitrust research for the business team.
 
 ## When to Use
 
@@ -39,6 +53,9 @@ Any questions answerable from caselaw, statutes, regulations, administrative mat
 - Comparisons across more than three jurisdictions
 - Boolean search queries (the tool expects natural language)
 
+## Database
+
+The `db/` directory contains a reference PostgreSQL schema and indexes optimized for the plugin's data access patterns, plus a versioned migration system under `db/migrations/`. See [db/README.md](db/README.md) and [db/migrations/README.md](db/migrations/README.md).
 
 ### Links
 
