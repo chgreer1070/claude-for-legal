@@ -69,7 +69,7 @@ BEGIN
 
     -- District of Columbia
     INSERT INTO jurisdictions (name, abbreviation, jurisdiction_type) VALUES
-        ('District of Columbia', 'DC', 'state')
+        ('District of Columbia', 'DC', 'territorial')
     ON CONFLICT (name) DO NOTHING;
 
     -- Territories

@@ -147,7 +147,11 @@ motions may need only A–C; complex motions may need A–F.
 
 ### 5. Citation format
 
-- Use Bluebook citation format throughout
+- Use the citation format from the research profile
+  (`~/.claude/plugins/config/claude-for-legal/cocounsel-legal/CLAUDE.md` →
+  Citation format). Defaults to Bluebook if not configured. If
+  `firm-house-style`, apply the deviations listed in the House citation
+  style notes.
 - Include pin cites to specific pages where the court stated the rule
 - Use parenthetical descriptions for every case citation
 - Signal citations appropriately: *see*, *see also*, *cf.*, *but see*,

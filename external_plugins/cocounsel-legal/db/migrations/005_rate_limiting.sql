@@ -25,9 +25,6 @@ BEGIN
         updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
     );
 
-    CREATE INDEX idx_subscription_quotas_user
-        ON subscription_quotas (user_id);
-
     -- Usage counters — rolling windows
     CREATE TABLE usage_counters (
         id              BIGSERIAL PRIMARY KEY,
