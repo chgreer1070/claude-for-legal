@@ -22,25 +22,31 @@
       "type": "http",
       "url": "https://cloudimanage.com/mcp/work",
       "title": "iManage",
-      "description": "Governed iManage content connected to Claude — documents stay in iManage, access is permission-bound and auditable."
+      "description": "Governed iManage content connected to Claude \u2014 documents stay in iManage, access is permission-bound and auditable."
     },
     "TopCounsel": {
       "type": "http",
       "url": "https://api.techgc.co/api/mcp/topcounsel",
       "title": "TopCounsel",
-      "description": "Outside counsel recommendations from The L Suite — 5,000+ in-house counsel community sentiment, rankings, and expertise evidence."
+      "description": "Outside counsel recommendations from The L Suite \u2014 5,000+ in-house counsel community sentiment, rankings, and expertise evidence."
     },
     "Definely": {
       "type": "http",
       "url": "https://mcp.uk.definely.com/api/proxy/core-mcp",
       "title": "Definely",
-      "description": "Live, deterministic access to contract structure — resolve definitions, validate cross-references, map dependencies, run structural diffs."
+      "description": "Live, deterministic access to contract structure \u2014 resolve definitions, validate cross-references, map dependencies, run structural diffs."
     },
     "Solve Intelligence": {
       "type": "http",
       "url": "https://api.solveintelligence.com/mcp/",
       "title": "Solve Intelligence",
-      "description": "Patent workflows — search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis."
+      "description": "Patent workflows \u2014 search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis."
+    },
+    "Harvey AI": {
+      "type": "http",
+      "url": "https://mcp.harvey.ai/mcp",
+      "title": "Harvey AI",
+      "description": "Legal Q&A, Vault document analysis, and specialized research knowledge sources from Harvey AI."
     }
   },
   "recommendedCategories": [
@@ -50,6 +56,7 @@
     "board-governance",
     "documents",
     "chat",
-    "email"
+    "email",
+    "legal-research"
   ]
 }

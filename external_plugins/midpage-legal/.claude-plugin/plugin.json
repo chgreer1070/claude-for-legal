@@ -1,0 +1,9 @@
+{
+  "name": "midpage-legal",
+  "version": "0.1.0",
+  "description": "Midpage Legal Research connects Claude to a comprehensive US case law database. Search federal and state court opinions, find quotable passages, and analyze opinions — all hyperlinked to real sources.",
+  "author": {
+    "name": "Midpage",
+    "email": "support@midpage.ai"
+  }
+}
