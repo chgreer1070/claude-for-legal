@@ -21,7 +21,9 @@ db/
     ├── README.md                      ← migration conventions
     ├── 001_initial_schema.sql         ← core tables
     ├── 002_core_indexes.sql           ← Deep Research access-pattern indexes
-    └── 003_query_analytics.sql        ← usage tracking and performance metrics
+    ├── 003_query_analytics.sql        ← usage tracking and performance metrics
+    ├── 004_seed_jurisdictions.sql     ← 50 states + DC + territories + federal circuits
+    └── 005_rate_limiting.sql          ← subscription quotas and usage tracking
 ```
 
 ## Data-access patterns

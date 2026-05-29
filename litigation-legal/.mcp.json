@@ -41,6 +41,15 @@
       "url": "https://mcp.trellis.law/anthropic",
       "title": "Trellis",
       "description": "The largest state trial court dataset in the U.S. — dockets, rulings, verdicts, filings, judge and opposing counsel analytics, expert witness vetting."
+    },
+    "CoCounsel Legal": {
+      "type": "http",
+      "url": "https://legal-mcp.thomsonreuters.com/mcp",
+      "title": "CoCounsel Legal",
+      "description": "Westlaw Deep Research — run jurisdiction-specific legal research and receive fully cited reports with linked citations to Westlaw and Practical Law sources.",
+      "oauth": {
+        "clientId": "QCgP4IGN5JiLqXRHxiAVr3wu1ySo2nQx"
+      }
     }
   },
   "recommendedCategories": [

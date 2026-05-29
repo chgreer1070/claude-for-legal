@@ -41,6 +41,15 @@
       "url": "https://api.solveintelligence.com/mcp/",
       "title": "Solve Intelligence",
       "description": "Patent workflows — search patent and non-patent literature, legal texts, SEP technical standards, prior art, claim analysis."
+    },
+    "CoCounsel Legal": {
+      "type": "http",
+      "url": "https://legal-mcp.thomsonreuters.com/mcp",
+      "title": "CoCounsel Legal",
+      "description": "Westlaw Deep Research — run jurisdiction-specific legal research and receive fully cited reports with linked citations to Westlaw and Practical Law sources.",
+      "oauth": {
+        "clientId": "QCgP4IGN5JiLqXRHxiAVr3wu1ySo2nQx"
+      }
     }
   },
   "recommendedCategories": [

@@ -1,0 +1,5 @@
+[
+  { "event": "Weekly citation treatment check — scan all watched citations for new negative treatment since last run", "description": "Scheduled weekly sweep — the default Monday-morning run" },
+  { "event": "Targeted check: matter acme-noncompete, verify all cited authorities are still good law before filing the MSJ brief", "description": "Pre-filing citation check for a specific matter" },
+  { "event": "Emergency check: Smith v. Jones was just reversed — scan all matters citing it and flag affected briefs", "description": "Reactive check triggered by a known adverse development" }
+]

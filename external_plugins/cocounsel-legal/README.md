@@ -16,6 +16,38 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 | **Jurisdiction Comparison** | `/cocounsel-legal:jurisdiction-comparison` | Side-by-side comparison of how 2–3 U.S. jurisdictions treat the same legal issue. Produces a structured comparison table with citations. |
 | **Research Export** | `/cocounsel-legal:research-export` | Transforms a completed research report into a work-product format: research memo, brief section, client email, or executive summary. |
 | **Research History** | `/cocounsel-legal:research-history` | Retrieves and manages past Deep Research sessions. Find a previous report by topic, re-retrieve completed research, or list recent activity. |
+| **Research Brief** | `/cocounsel-legal:research-brief` | Takes a Deep Research report + case theory and drafts a structured legal argument section with authority marshaling and counter-argument anticipation. |
+| **Quota Tracker** | `/cocounsel-legal:quota-tracker` | Tracks API usage against subscription limits. Shows remaining daily/monthly quota, concurrent sessions, and usage projections. |
+
+### Planned capabilities (stubs)
+
+These skills are defined and ready for activation when the CoCounsel Legal MCP server exposes the corresponding endpoints:
+
+| Skill | Command | Status |
+|---|---|---|
+| **Practical Law Search** | `/cocounsel-legal:practical-law-search` | Stub — awaiting MCP endpoint |
+| **Document Drafting** | `/cocounsel-legal:document-drafting` | Stub — awaiting MCP endpoint |
+| **Contract Analysis** | `/cocounsel-legal:contract-analysis` | Stub — awaiting MCP endpoint |
+
+## Managed agents
+
+| Agent | Location | What it does |
+|---|---|---|
+| **Authority Tracker** | `managed-agent-cookbooks/authority-tracker/` | Scheduled agent that monitors cited authorities for negative treatment changes (like KeyCite alerts) and posts Slack alerts when a relied-on case is distinguished, overruled, or otherwise weakened. |
+
+## Cross-plugin integrations
+
+CoCounsel Legal is registered as an MCP connector in these practice-area plugins:
+
+| Plugin | Use case |
+|---|---|
+| `litigation-legal` | Case research, claim charts, motion prep, authority verification |
+| `commercial-legal` | Contract clause enforceability, governing law research |
+| `regulatory-legal` | Regulatory interpretation, enforcement action research |
+| `ip-legal` | Patent/trademark case law, IP litigation research |
+| `employment-legal` | Employment law research, wage/hour, classification |
+| `corporate-legal` | M&A diligence research, governance questions |
+| `privacy-legal` | Privacy regulation research, enforcement actions |
 
 ## Example use cases
 
@@ -26,6 +58,9 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 5. Compare California, Texas, and New York on trade secret misappropriation standards.
 6. Turn that research into a memo for the partner.
 7. Export an executive summary of the antitrust research for the business team.
+8. Draft the summary judgment argument section from that research — my theory is that the non-compete is overbroad.
+9. Check my API usage — how many research queries do I have left this month?
+10. Find me a Practical Law template for a SaaS agreement. *(planned)*
 
 ## When to Use
 
@@ -45,7 +80,7 @@ Any questions answerable from caselaw, statutes, regulations, administrative mat
 - Outcome predictions ("How likely is plaintiff to prevail on summary judgment?")
 - Identifying causes of action a client could bring (the skill researches what the law says, not whether a given set of facts states a claim)
 - Applying law to a specific fact pattern or scenario (the skill researches legal questions in the abstract, not how the law would resolve your facts)
-- Drafting legal documents, forms, or templates
+- Drafting legal documents, forms, or templates *(planned — see document-drafting stub)*
 - Information about specific judges, attorneys, or parties
 - Foreign or non-U.S. law
 - Commands to execute tasks ("Send me an email about X case")
