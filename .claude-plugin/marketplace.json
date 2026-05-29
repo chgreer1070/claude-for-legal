@@ -107,6 +107,22 @@
       "author": {
         "name": "Thomson Reuters"
       }
+    },
+    {
+      "name": "harvey-ai",
+      "source": "./external_plugins/harvey-ai",
+      "description": "Harvey AI brings legal Q&A, Vault document analysis, and specialized research knowledge sources into Claude for Harvey subscribers.",
+      "author": {
+        "name": "Harvey AI"
+      }
+    },
+    {
+      "name": "midpage-legal",
+      "source": "./external_plugins/midpage-legal",
+      "description": "Midpage Legal Research connects Claude to a comprehensive US case law database. Search federal and state court opinions, find quotable passages, and analyze opinions — all hyperlinked to real sources.",
+      "author": {
+        "name": "Midpage"
+      }
     }
   ]
 }

@@ -29,6 +29,12 @@
       "url": "https://mcp.asana.com/sse",
       "title": "Asana",
       "description": "Tasks and project tracking."
+    },
+    "Harvey AI": {
+      "type": "http",
+      "url": "https://mcp.harvey.ai/mcp",
+      "title": "Harvey AI",
+      "description": "Legal Q&A, Vault document analysis, and specialized research knowledge sources from Harvey AI."
     }
   },
   "recommendedCategories": [
@@ -37,6 +43,7 @@
     "documents",
     "chat",
     "email",
-    "outside-counsel-network"
+    "outside-counsel-network",
+    "legal-research"
   ]
 }

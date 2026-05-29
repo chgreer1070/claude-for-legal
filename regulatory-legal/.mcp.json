@@ -11,6 +11,18 @@
       "url": "https://drivemcp.googleapis.com/mcp/v1",
       "title": "Google Drive",
       "description": "Search, read, and fetch documents from Google Drive."
+    },
+    "Harvey AI": {
+      "type": "http",
+      "url": "https://mcp.harvey.ai/mcp",
+      "title": "Harvey AI",
+      "description": "Legal Q&A, Vault document analysis, and specialized research knowledge sources from Harvey AI."
+    },
+    "Midpage": {
+      "type": "http",
+      "url": "https://app.midpage.ai/mcp/v2",
+      "title": "Midpage Legal Research",
+      "description": "US case law search, quotable passage extraction, and opinion analysis \u2014 hyperlinked to source."
     }
   },
   "recommendedCategories": [
@@ -18,6 +30,7 @@
     "regulatory-intelligence",
     "documents",
     "chat",
-    "email"
+    "email",
+    "case-law"
   ]
 }
