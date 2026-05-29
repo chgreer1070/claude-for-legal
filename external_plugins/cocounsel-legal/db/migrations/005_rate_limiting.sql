@@ -56,10 +56,11 @@ BEGIN
     CREATE INDEX idx_active_sessions_user
         ON active_sessions (user_id);
 
-    -- Stale session cleanup: sessions not polled in 30 minutes
-    CREATE INDEX idx_active_sessions_stale
-        ON active_sessions (last_poll_at)
-        WHERE last_poll_at < NOW() - INTERVAL '30 minutes';
+    -- Stale session cleanup: query with WHERE last_poll_at < NOW() - '30 min'
+    -- Uses a plain B-tree (not a partial index) because NOW() in a partial
+    -- index WHERE clause is evaluated once at creation time, not at query time.
+    CREATE INDEX idx_active_sessions_last_poll
+        ON active_sessions (last_poll_at);
 
     -- Rate limit events log (for alerting and dashboards)
     CREATE TABLE rate_limit_events (

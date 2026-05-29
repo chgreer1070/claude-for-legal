@@ -38,6 +38,13 @@ tables from migration 005 must be applied to the database.
 - Running research — use `cocounsel-legal:deep-research`
 - General billing questions — direct to CoCounsel support
 
+## Communication Rules
+
+- Never mention table names, SQL queries, or implementation details
+- Present usage in plain language with clear numbers
+- When a rate limit is hit, explain what happened and when it resets
+  without exposing internal field names
+
 ## Workflow
 
 ### 1. Determine the request
