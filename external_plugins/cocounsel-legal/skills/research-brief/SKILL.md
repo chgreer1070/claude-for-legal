@@ -52,6 +52,35 @@ research on gaps.
 - Note where authority is thin and additional research may be needed
 - Flag circuit splits and unsettled law clearly
 
+## Record Fidelity and Anti-Fabrication
+
+Every citation in the draft must come from the Deep Research report or
+from a verified follow-up query run during this session. Never generate
+a citation from model knowledge. An invented citation — even a
+plausible-sounding one — is a fabrication and can result in court
+sanctions.
+
+**Source attribution.** Tag every citation with its provenance:
+- `[from research report]` — citation found in the Deep Research output
+- `[from follow-up query]` — citation from a second Deep Research run
+- `[model knowledge — verify]` — used ONLY for non-citation factual
+  context (e.g., procedural standards), never for case citations
+
+**When authority is missing.** If a legal proposition cannot be
+supported by a citation from the research report:
+1. Insert a `[CITE NEEDED]` marker at the exact location
+2. Do NOT fill the gap from model knowledge without asking
+3. After drafting, present the gaps to the user:
+
+> "The draft has [N] propositions I couldn't support from the research
+> report. Options:
+> 1. I run a targeted follow-up query on [specific gap]
+> 2. You supply the missing authority
+> 3. I remove or weaken the unsupported proposition"
+
+A brief with `[CITE NEEDED]` markers is honest. A brief with invented
+citations is malpractice exposure.
+
 ## Brief Drafting Workflow
 
 ### 1. Gather inputs
