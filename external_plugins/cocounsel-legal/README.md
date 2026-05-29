@@ -7,10 +7,15 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 - Return to a completed CoCounsel Legal research conversation and retrieve the report later.
 - Ask follow-up questions in the same conversation without restarting research.
 
+## Setup
+
+Run `/cocounsel-legal:cold-start-interview` on first use. It configures your research defaults (jurisdictions, citation format, subscription tier) so every skill reads your preferences automatically. Takes ~5 minutes. See `CLAUDE.md` for the full research profile template.
+
 ## Skills
 
 | Skill | Command | What it does |
 |---|---|---|
+| **Cold-Start Interview** | `/cocounsel-legal:cold-start-interview` | Setup interview — configures research defaults, jurisdiction preferences, subscription tier, citation format, and cross-plugin routing. |
 | **Deep Research** | `/cocounsel-legal:deep-research` | Runs the full Westlaw Deep Research cycle: start, poll, report. Returns a fully cited research report. |
 | **Citation Verification** | `/cocounsel-legal:citation-verification` | Validates citations from a Deep Research report or user-supplied text. Checks good-law status, negative treatment, and resolution accuracy. |
 | **Jurisdiction Comparison** | `/cocounsel-legal:jurisdiction-comparison` | Side-by-side comparison of how 2–3 U.S. jurisdictions treat the same legal issue. Produces a structured comparison table with citations. |
@@ -18,6 +23,7 @@ CoCounsel Legal brings Westlaw Deep Research into Claude for CoCounsel Legal sub
 | **Research History** | `/cocounsel-legal:research-history` | Retrieves and manages past Deep Research sessions. Find a previous report by topic, re-retrieve completed research, or list recent activity. |
 | **Research Brief** | `/cocounsel-legal:research-brief` | Takes a Deep Research report + case theory and drafts a structured legal argument section with authority marshaling and counter-argument anticipation. |
 | **Quota Tracker** | `/cocounsel-legal:quota-tracker` | Tracks API usage against subscription limits. Shows remaining daily/monthly quota, concurrent sessions, and usage projections. |
+| **Case Law Monitor** | `/cocounsel-legal:case-law-monitor` | Sets up proactive monitoring of a legal topic for new case law developments. Produces periodic digests comparing new decisions against a baseline landscape. |
 
 ### Planned capabilities (stubs)
 
@@ -29,7 +35,15 @@ These skills are defined and ready for activation when the CoCounsel Legal MCP s
 | **Document Drafting** | `/cocounsel-legal:document-drafting` | Stub — awaiting MCP endpoint |
 | **Contract Analysis** | `/cocounsel-legal:contract-analysis` | Stub — awaiting MCP endpoint |
 
-## Managed agents
+## Agents
+
+### Inline agents
+
+| Agent | Location | What it does |
+|---|---|---|
+| **Research Monitor** | `agents/research-monitor.md` | Scheduled agent that runs periodic Deep Research checks on monitored topics, compares against baselines, and produces digests of new case law developments. |
+
+### Managed agent cookbooks
 
 | Agent | Location | What it does |
 |---|---|---|
@@ -61,6 +75,8 @@ CoCounsel Legal is registered as an MCP connector in these practice-area plugins
 8. Draft the summary judgment argument section from that research — my theory is that the non-compete is overbroad.
 9. Check my API usage — how many research queries do I have left this month?
 10. Find me a Practical Law template for a SaaS agreement. *(planned)*
+11. Monitor non-compete enforceability in California for new case law — alert me when there's a new ruling.
+12. Set up my research profile — I mostly work in California and Federal 9th Circuit.
 
 ## When to Use
 
