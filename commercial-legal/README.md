@@ -137,6 +137,20 @@ commercial-legal/
 └── hooks/hooks.json
 ```
 
+## Related: Standalone Contract Review Skill
+
+For a lightweight, developer-friendly contract review without team playbooks or CLM integration, see **[claude-legal-skill](https://github.com/chgreer1070/claude-legal-skill)** — a standalone Agent Skill with CUAD-based risk detection, market benchmarks, and JSON redline output. Works with Claude Code, Codex, Cursor, and 26+ tools.
+
+| This plugin (claude-for-legal) | claude-legal-skill |
+|---|---|
+| Playbook-driven (cold-start interview) | Market-standard benchmarks (no setup) |
+| Team escalation routing | Individual developer workflow |
+| CLM + DocuSign integration | legal-redline-tools integration |
+| NDA triage (GREEN/YELLOW/RED) | Full review with redline language |
+| Practice-profile persistence | Stateless per-review |
+
+Use this plugin when you have a team with established playbook positions. Use claude-legal-skill when you need a quick first-pass review in your coding workflow.
+
 ## Notes
 
 - The plugin assumes you're the **customer** in most reviews. When you're the vendor, flag it and the review flips the playbook polarity.
